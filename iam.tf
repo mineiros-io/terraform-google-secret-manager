@@ -3,7 +3,7 @@ locals {
 }
 
 module "iam" {
-  source = "git@github.com:mineiros-io/terraform-google-secret-manager-iam?ref=v0.0.1"
+  source = "github.com/mineiros-io/terraform-google-secret-manager-iam?ref=v0.0.1"
 
   for_each = local.iam_map
 
