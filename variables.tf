@@ -69,8 +69,14 @@ variable "project" {
 
 variable "iam" {
   type        = any
-  description = "(Optional) A list of IAM access to apply to the created secret"
+  description = "(Optional) A list of IAM access."
   default     = []
+}
+
+variable "policy_bindings" {
+  description = "(Optional) A list of IAM policy bindings."
+  type        = any
+  default     = null
 }
 
 # ------------------------------------------------------------------------------
