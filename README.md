@@ -191,7 +191,7 @@ See [variables.tf] and [examples/] for details and use-cases.
 
   Each `iam` object accepts the following fields:
 
-  - **`members`**: **_(Required `list(string)`)_**
+  - **`members`**: _(Optional `set(string)`)_
 
     Identities that will be granted the privilege in role. Each entry can have one of the following values:
     - `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account.
@@ -200,10 +200,13 @@ See [variables.tf] and [examples/] for details and use-cases.
     - `serviceAccount:{emailid}`: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.
     - `group:{emailid}`: An email address that represents a Google group. For example, admins@example.com.
     - `domain:{domain}`: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
+    - `projectOwner:projectid`: Owners of the given project. For example, `projectOwner:my-example-project`
+    - `projectEditor:projectid`: Editors of the given project. For example, `projectEditor:my-example-project`
+    - `projectViewer:projectid`: Viewers of the given project. For example, `projectViewer:my-example-project`
 
     Default is `[]`.
 
-  - **`role`**: **_(Required `string`)_**
+  - **`role`**: _(Optional `string`)_
 
     The role that should be applied. Note that custom roles must be of the format `[projects|organizations]/{parent-name}/roles/{role-name}`.
 
@@ -237,7 +240,7 @@ See [variables.tf] and [examples/] for details and use-cases.
 
     The role that should be applied.
 
-  - **`members`**: **_(Required `string`)_**
+  - **`members`**: _(Optional `set(string)`)_
 
     Identities that will be granted the privilege in `role`.
 
@@ -281,6 +284,10 @@ The following attributes are exported in the outputs of the module:
 - **`secret`**
 
   All `google_secret_manager_secret` resource attributes.
+
+- **`iam`**
+
+  The `iam` resource objects that define the access to the secret.
 
 ## External Documentation
 
