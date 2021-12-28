@@ -17,8 +17,8 @@ module "iam" {
   module_depends_on = var.module_depends_on
 
   secret_id       = google_secret_manager_secret.secret[0].secret_id
-  role            = each.value.role
-  members         = each.value.members
+  role            = try(each.value.role, null)
+  members         = try(each.value.members, null)
   authoritative   = try(each.value.authoritative, true)
   policy_bindings = try(each.value.policy_bindings, null)
 }
