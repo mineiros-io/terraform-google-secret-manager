@@ -48,7 +48,7 @@ Most basic usage just setting required arguments:
 
 ```hcl
 module "terraform-google-secret-manager" {
-    source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.1.0"
+    source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.1.3"
 
     secret_id = "secret"
 }
@@ -65,7 +65,7 @@ See [variables.tf] and [examples/] for details and use-cases.
 - **`module_enabled`**: _(Optional `bool`)_
 
   Specifies whether resources in the module will be created.
-  
+
   Default is `true`.
 
 - **`module_depends_on`**: _(Optional `list(dependencies)`)_
@@ -106,7 +106,7 @@ See [variables.tf] and [examples/] for details and use-cases.
   - **`customer_managed_encryption`**: _(Optional `object(customer_managed_encryption)`)_
 
     Customer Managed Encryption for the secret.
-    
+
     Example
 
     ```hcl
@@ -123,12 +123,12 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 - **`labels`**: _(Optional `map(string)`)_
 
-  The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}][\p{Ll}\p{Lo}\p{N}-]{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}-]{0,63}` No more than 64 labels can be assigned to a given resource. An object containing a list of `key: value` pairs. 
-  
+  The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}][\p{Ll}\p{Lo}\p{N}-]{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}-]{0,63}` No more than 64 labels can be assigned to a given resource. An object containing a list of `key: value` pairs.
+
   Example
-  ```hcl  
+  ```hcl
   labels = {
-    "app": "web", 
+    "app": "web",
     "env": "prod"
   }
   ```
@@ -150,7 +150,7 @@ See [variables.tf] and [examples/] for details and use-cases.
   The rotation time and period for a Secret. At `next_rotation_time`, Secret Manager will send a Pub/Sub notification to the topics configured on the Secret. `topics` must be set to configure rotation.
 
   Example
-  
+
   ```hcl
   rotation = {
     next_rotation_time = "2022-10-02T15:01:23.045123456Z"
