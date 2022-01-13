@@ -44,6 +44,8 @@ This module implements the following terraform resources:
 
 and supports additional features of the following modules:
 
+- [mineiros-io/terraform-google-secret-manager-iam](https://github.com/mineiros-io/terraform-google-secret-manager-iam)
+
 ## Getting Started
 
 Most basic usage just setting required arguments:

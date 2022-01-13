@@ -55,6 +55,8 @@ section {
       - `google_secret_manager_secret`
 
       and supports additional features of the following modules:
+
+      - [mineiros-io/terraform-google-secret-manager-iam](https://github.com/mineiros-io/terraform-google-secret-manager-iam)
     END
   }
 
