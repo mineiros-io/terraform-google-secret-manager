@@ -353,19 +353,28 @@ section {
     title   = "Module Outputs"
     content = <<-END
       The following attributes are exported in the outputs of the module:
-
-      - **`module_enabled`**
-
-        Whether this module is enabled.
-
-      - **`secret`**
-
-        All `google_secret_manager_secret` resource attributes.
-
-      - **`iam`**
-
-        The `iam` resource objects that define the access to the secret.
     END
+
+    output "module_enabled" {
+      type        = bool
+      description = <<-END
+        Whether this module is enabled.
+      END
+    }
+
+    output "secret" {
+      type        = object(secret)
+      description = <<-END
+        All `google_secret_manager_secret` resource attributes.
+      END
+    }
+
+    output "iam" {
+      type        = list(iam)
+      description = <<-END
+        The `iam` resource objects that define the access to the secret.
+      END
+    }
   }
 
   section {
