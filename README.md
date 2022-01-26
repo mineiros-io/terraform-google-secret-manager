@@ -286,15 +286,15 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 The following attributes are exported in the outputs of the module:
 
-- **`module_enabled`**
+- [**`module_enabled`**](#output-module_enabled): *(`bool`)*<a name="output-module_enabled"></a>
 
   Whether this module is enabled.
 
-- **`secret`**
+- [**`secret`**](#output-secret): *(`object(secret)`)*<a name="output-secret"></a>
 
   All `google_secret_manager_secret` resource attributes.
 
-- **`iam`**
+- [**`iam`**](#output-iam): *(`list(iam)`)*<a name="output-iam"></a>
 
   The `iam` resource objects that define the access to the secret.
 
