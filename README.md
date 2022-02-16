@@ -52,7 +52,7 @@ Most basic usage just setting required arguments:
 
 ```hcl
 module "terraform-google-secret-manager" {
-  source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.1.3"
+  source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.1.4"
 
   secret_id = "secret"
 }
@@ -352,7 +352,7 @@ Run `make help` to see details on each available target.
 ## License
 
 [![license][badge-license]][apache20]
-      
+
 This module is licensed under the Apache License Version 2.0, January 2004.
 Please see [LICENSE] for full details.
 
