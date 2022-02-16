@@ -21,4 +21,5 @@ module "iam" {
   members         = try(each.value.members, null)
   authoritative   = try(each.value.authoritative, true)
   policy_bindings = try(each.value.policy_bindings, null)
+  project         = var.project
 }
