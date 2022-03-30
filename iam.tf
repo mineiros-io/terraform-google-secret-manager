@@ -15,7 +15,7 @@ locals {
 module "iam" {
   source = "github.com/mineiros-io/terraform-google-secret-manager-iam?ref=v0.0.4"
 
-  local.iam_output[local.iam_output_index]
+  for_each = local.iam_output[local.iam_output_index]
 
   module_enabled    = var.module_enabled
   module_depends_on = var.module_depends_on
