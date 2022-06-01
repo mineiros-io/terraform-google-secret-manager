@@ -52,7 +52,7 @@ Most basic usage just setting required arguments:
 
 ```hcl
 module "terraform-google-secret-manager" {
-  source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.1.4"
+  source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.2.0"
 
   secret_id = "secret"
 }
