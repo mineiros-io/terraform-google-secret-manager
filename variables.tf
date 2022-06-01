@@ -25,8 +25,8 @@ variable "replicas" {
 }
 
 variable "labels" {
+  type        = map(string)
   description = "(Optional) The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: '[\\p{Ll}\\p{Lo}][\\p{Ll}\\p{Lo}\\p{N}-]{0,62}' Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: [\\p{Ll}\\p{Lo}\\p{N}-]{0,63} No more than 64 labels can be assigned to a given resource. An object containing a list of 'key': value pairs."
-  type        = any
   default     = {}
 }
 
@@ -62,20 +62,6 @@ variable "rotation" {
 variable "project" {
   description = "(Optional) The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
-  default     = null
-}
-
-## IAM
-
-variable "iam" {
-  type        = any
-  description = "(Optional) A list of IAM access."
-  default     = []
-}
-
-variable "policy_bindings" {
-  description = "(Optional) A list of IAM policy bindings."
-  type        = any
   default     = null
 }
 

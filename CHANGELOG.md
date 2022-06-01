@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] BREAKING CHANGE
+
+### Changed
+
+- BREAKING CHANGE: IAM config rewritten. Resources might get recreated.
+
 ## [0.1.4]
 
 ### Fixed

@@ -52,7 +52,7 @@ Most basic usage just setting required arguments:
 
 ```hcl
 module "terraform-google-secret-manager" {
-  source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.1.4"
+  source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.2.0"
 
   secret_id = "secret"
 }
@@ -296,7 +296,11 @@ The following attributes are exported in the outputs of the module:
 
 - [**`iam`**](#output-iam): *(`list(iam)`)*<a name="output-iam"></a>
 
-  The `iam` resource objects that define the access to the secret.
+  All attributes of the created policy_bindings mineiros-io/secret-manager-iam/google module when using iam bindings or members.
+
+- [**`policy_binding`**](#output-policy_binding): *(`list(iam)`)*<a name="output-policy_binding"></a>
+
+  All attributes of the created policy_bindings mineiros-io/secret-manager-iam/google module when using policy bindings.
 
 ## External Documentation
 
