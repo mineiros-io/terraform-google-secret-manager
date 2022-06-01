@@ -372,9 +372,17 @@ section {
     output "iam" {
       type        = list(iam)
       description = <<-END
-        The `iam` resource objects that define the access to the secret.
+        All attributes of the created policy_bindings mineiros-io/secret-manager-iam/google module when using iam bindings or members.
       END
     }
+
+    output "policy_binding" {
+      type        = list(iam)
+      description = <<-END
+        All attributes of the created policy_bindings mineiros-io/secret-manager-iam/google module when using policy bindings.
+      END
+    }
+
   }
 
   section {
