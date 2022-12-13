@@ -65,6 +65,49 @@ variable "project" {
   default     = null
 }
 
+variable "iam" {
+  description = "(Optional) A list of IAM access roles and members."
+  type        = any
+  default     = []
+
+  # validate that at least one required attribute of 'role' or 'roles' is defined in each iam object
+  validation {
+    condition     = alltrue([for x in var.iam : can(x.role) || can(x.roles)])
+    error_message = "Each object in 'var.iam' must specify a single 'role' or a set of 'roles'."
+  }
+
+  # validate that members attribute is set in each object
+  validation {
+    condition     = alltrue([for x in var.iam : can(x.members)])
+    error_message = "Each object in 'var.iam' must specify a set of 'members'."
+  }
+
+  # validate no invalid attributes are set in each object
+  validation {
+    condition     = alltrue([for x in var.iam : length(setsubtract(keys(x), ["role", "roles", "members", "authoritative"])) == 0])
+    error_message = "Each object in 'var.iam' does only support the 'role', 'roles', 'members', and 'authoritative' attributes."
+  }
+}
+
+
+variable "policy_bindings" {
+  description = "(Optional) A list of IAM policy bindings."
+  type        = any
+  default     = null
+}
+
+variable "computed_members_map" {
+  type        = map(string)
+  description = "(Optional) A map of members to replace in 'members' to handle terraform computed values. Will be ignored when policy bindings are used."
+  default     = {}
+
+  validation {
+    condition     = alltrue([for k, v in var.computed_members_map : can(regex("^(allUsers|allAuthenticatedUsers|(user|serviceAccount|group|domain|projectOwner|projectEditor|projectViewer):)", v))])
+    error_message = "The value must be a non-empty list of strings where each entry is a valid principal type identified with `user:`, `serviceAccount:`, `group:`, `domain:`, `projectOwner:`, `projectEditor:` or `projectViewer:`."
+  }
+}
+
+
 # ------------------------------------------------------------------------------
 # MODULE CONFIGURATION PARAMETERS
 # These variables are used to configure the module.

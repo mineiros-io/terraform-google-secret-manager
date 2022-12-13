@@ -192,6 +192,7 @@ See [variables.tf] and [examples/] for details and use-cases.
     - `projectOwner:projectid`: Owners of the given project. For example, `projectOwner:my-example-project`
     - `projectEditor:projectid`: Editors of the given project. For example, `projectEditor:my-example-project`
     - `projectViewer:projectid`: Viewers of the given project. For example, `projectViewer:my-example-project`
+    - `computed:{identifier}`: An existing key from `var.computed_members_map`.
 
     Default is `[]`.
 
@@ -262,6 +263,12 @@ See [variables.tf] and [examples/] for details and use-cases.
 
       An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
 
+- [**`computed_members_map`**](#var-computed_members_map): *(Optional `map(string)`)*<a name="var-computed_members_map"></a>
+
+  A map of members to replace in `members` of various IAM settings to handle terraform computed values.
+
+  Default is `{}`.
+
 ### Module Configuration
 
 - [**`module_enabled`**](#var-module_enabled): *(Optional `bool`)*<a name="var-module_enabled"></a>
@@ -285,10 +292,6 @@ See [variables.tf] and [examples/] for details and use-cases.
 ## Module Outputs
 
 The following attributes are exported in the outputs of the module:
-
-- [**`module_enabled`**](#output-module_enabled): *(`bool`)*<a name="output-module_enabled"></a>
-
-  Whether this module is enabled.
 
 - [**`secret`**](#output-secret): *(`object(secret)`)*<a name="output-secret"></a>
 

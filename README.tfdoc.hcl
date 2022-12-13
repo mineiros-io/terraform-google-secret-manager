@@ -234,6 +234,7 @@ section {
             - `projectOwner:projectid`: Owners of the given project. For example, `projectOwner:my-example-project`
             - `projectEditor:projectid`: Editors of the given project. For example, `projectEditor:my-example-project`
             - `projectViewer:projectid`: Viewers of the given project. For example, `projectViewer:my-example-project`
+            - `computed:{identifier}`: An existing key from `var.computed_members_map`.
           END
         }
 
@@ -322,6 +323,14 @@ section {
           }
         }
       }
+
+      variable "computed_members_map" {
+        type        = map(string)
+        description = <<-END
+          A map of members to replace in `members` of various IAM settings to handle terraform computed values.
+        END
+        default     = {}
+      }
     }
 
     section {
@@ -354,13 +363,6 @@ section {
     content = <<-END
       The following attributes are exported in the outputs of the module:
     END
-
-    output "module_enabled" {
-      type        = bool
-      description = <<-END
-        Whether this module is enabled.
-      END
-    }
 
     output "secret" {
       type        = object(secret)
