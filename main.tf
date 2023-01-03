@@ -30,7 +30,7 @@ resource "google_secret_manager_secret" "secret" {
             location = replicas.value.location
 
             dynamic "customer_managed_encryption" {
-              for_each = try(replicas.value.customer_managed_encryption, [])
+              for_each = try([replicas.value.customer_managed_encryption], [])
 
               content {
                 kms_key_name = customer_managed_encryption.value.kms_key_name

@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add support for `computed_members_map`
+
 ### Removed
 
 - BREAKING CHANGE: remove support for google provider `3.x`
+- BREAKING CHANGE: remove output `module_enabled`
 
 ## [0.2.0] BREAKING CHANGE
 
