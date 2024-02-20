@@ -3,7 +3,7 @@ globals {
 
   provider = "google"
 
-  provider_version_constraint  = ">= 4, < 6"
+  provider_version_constraint  = ">= 5, < 6"
   terraform_version_constraint = "~> ${global.minimum_terraform_version}, != 1.1.0, != 1.1.1"
   # we exclude 1.1.0 and 1.1.1 because of:
   # https://github.com/hashicorp/terraform/blob/v1.1/CHANGELOG.md#112-december-17-2021
