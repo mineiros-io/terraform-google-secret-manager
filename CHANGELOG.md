@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Upgrading all test dependencies to mitigate [ CVE-2024-3817](https://github.com/advisories/GHSA-q64h-39hv-4cf7). Thanks to @ckluente-1k5 for reporting and fixing this.
+
 ## [0.3.0]
 
 ### Added
