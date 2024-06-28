@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1]
+
 ### Changed
 
 - Upgrading all test dependencies to mitigate [ CVE-2024-3817](https://github.com/advisories/GHSA-q64h-39hv-4cf7). Thanks to @ckluente-1k5 for reporting and fixing this.
@@ -60,7 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-[unreleased]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.3.0...HEAD
+[unreleased]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.1.4...v0.2.0
 [0.1.4]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.1.3...v0.1.4
