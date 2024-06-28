@@ -7,11 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.3.1]
+## [0.1.1]
 
 ### Changed
 
 - Upgrading all test dependencies to mitigate [ CVE-2024-3817](https://github.com/advisories/GHSA-q64h-39hv-4cf7). Thanks to @ckluente-1k5 for reporting and fixing this.
+
+## [0.1.0] BREAKING CHANGE
+
+### Removed
+
+- drop support for version `4._*` and update child modules
+
+## [0.3.2]
+
+### Changed
+
+- Upgrading all test dependencies to mitigate [ CVE-2024-3817](https://github.com/advisories/GHSA-q64h-39hv-4cf7). Thanks to @ckluente-1k5 for reporting and fixing this.
+
+
+## [0.3.1]
+
+### Changed
+
+- Update terraform provider version constraint to support `5.x`
 
 ## [0.3.0]
 
@@ -62,7 +81,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-[unreleased]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.3.1...HEAD
+[unreleased]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.3.1...v1.0.1
+[1.0.0]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.3.1...v1.0.0
 [0.3.1]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/mineiros-io/terraform-google-secret-manager/compare/v0.1.4...v0.2.0
