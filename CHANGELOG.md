@@ -7,13 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.1]
+## [1.1.0]
+
+### Added
+
+- Add support for `principal` and `principalSet` in IAM members
+
+## [1.0.1]
 
 ### Changed
 
 - Upgrading all test dependencies to mitigate [ CVE-2024-3817](https://github.com/advisories/GHSA-q64h-39hv-4cf7). Thanks to @ckluente-1k5 for reporting and fixing this.
 
-## [0.1.0] BREAKING CHANGE
+## [1.0.0] BREAKING CHANGE
 
 ### Removed
 
@@ -24,7 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Upgrading all test dependencies to mitigate [ CVE-2024-3817](https://github.com/advisories/GHSA-q64h-39hv-4cf7). Thanks to @ckluente-1k5 for reporting and fixing this.
-
 
 ## [0.3.1]
 

@@ -52,7 +52,7 @@ Most basic usage just setting required arguments:
 
 ```hcl
 module "terraform-google-secret-manager" {
-  source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v0.3.0"
+  source = "github.com/mineiros-io/terraform-google-secret-manager.git?ref=v1.1.0"
 
   secret_id = "secret"
 }
@@ -193,6 +193,8 @@ See [variables.tf] and [examples/] for details and use-cases.
     - `projectEditor:projectid`: Editors of the given project. For example, `projectEditor:my-example-project`
     - `projectViewer:projectid`: Viewers of the given project. For example, `projectViewer:my-example-project`
     - `computed:{identifier}`: An existing key from `var.computed_members_map`.
+    - `principal://{identifier}`: Principal identifier as documented by Google Cloud. For example `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ATTRIBUTE_VALUE`
+    - `principalSet://{identifier}`: Principal set identifier as documented by Google Cloud. For example `principalSet://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/*`
 
     Default is `[]`.
 
