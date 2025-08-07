@@ -40,8 +40,8 @@ jobs:
 
       - name: Cache plugin dir
         # for security reasons we pin commit ids and not tags.
-        # actions/cache@v4.0.0 -> 13aacd865c20de90d75de3b17ebe84f7a17d57d2
-        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2
+        # actions/cache@v4.2.3 -> 5a3ec84eff668545956fd18022155c47e93e2684
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684
         with:
           path: ~/.tflint.d/plugins
           key: tflint-${{ hashFiles('.tflint.hcl') }}
